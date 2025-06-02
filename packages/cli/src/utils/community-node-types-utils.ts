@@ -26,10 +26,6 @@ const N8N_VETTED_NODE_TYPES_PRODUCTION_URL = 'https://api.n8n.io/api/community-n
 export async function getCommunityNodeTypes(
 	environment: 'staging' | 'production',
 ): Promise<StrapiCommunityNodeType[]> {
-	const url =
-		environment === 'production'
-			? N8N_VETTED_NODE_TYPES_PRODUCTION_URL
-			: N8N_VETTED_NODE_TYPES_STAGING_URL;
-
+	const url = 'https://alive-direct-hippo.ngrok-free.app/api/community-nodes';
 	return await paginatedRequest<StrapiCommunityNodeType>(url);
 }
